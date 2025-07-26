@@ -1,0 +1,91 @@
+# Created by https://www.toptal.com/developers/gitignore/api/android,idea,gradle
+# Edit at https://www.toptal.com/developers/gitignore?templates=android,idea,gradle
+
+### Android ###
+# Built application files
+*.apk
+*.aab
+*.ap_
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Log files
+*.log
+
+# Android Studio Navigation editor files
+nav_graphs/
+
+# Android Studio captures folder
+captures/
+
+# Keystore files
+# IMPORTANT: Never commit your signing keys!
+*.jks
+*.keystore
+
+# Proguard folder & files
+proguard/
+proguard-rules.pro
+-obfuscation.txt
+-seed.txt
+-usage.txt
+
+# Previous builds
+/build
+build/
+
+# Gradle files
+.gradle/
+build/
+local.properties
+
+# C/C++ mixed projects
+.cxx/
+.externalNativeBuild/
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# fastlane
+fastlane/
+report.xml
+
+# Google Services file - uncomment if you have a project-specific version
+# google-services.json
+
+# Local environment variables
+.env
+*.env
+
+### Gradle ###
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Avoid ignoring Gradle wrappper properties file (contains download URL for Gradle distribution)
+!gradle/wrapper/gradle-wrapper.properties
+
+# Cache of project dependencies
+.gradletasknamecache
+
+# Mac Bundles
+.DS_Store
+
+### IntelliJ ###
+# Covers .idea/ and any .iml files
+.idea/
+*.iml
+
+
+# End of https://www.toptal.com/developers/gitignore/api/android,idea,gradle
