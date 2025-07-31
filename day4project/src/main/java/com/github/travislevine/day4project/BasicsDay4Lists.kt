@@ -15,6 +15,14 @@ fun main() {
 
     // Add a replacement item
     shoppingList.add("Graphics Card RTX 5090")
+    println(shoppingList)
 
+    // Use index removal
+    shoppingList.removeAt(2)
+    shoppingList.removeAt(1)
+    println(shoppingList)
+
+    // Add items back with index
+    shoppingList.add(2, "RAM")
     println(shoppingList)
 }
