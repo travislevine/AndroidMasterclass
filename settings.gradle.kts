@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "DevMasterClass"
 include(":app")
 include(":day3project")
+include(":day4project")
