@@ -1,6 +1,6 @@
 package com.github.travislevine.day3project
 
-class Dog(val name: String, val breed: String, val age: Int = 0) {
+class Dog(val name: String, val breed: String, var age: Int = 0) {
    init {
        Bark()
    }
