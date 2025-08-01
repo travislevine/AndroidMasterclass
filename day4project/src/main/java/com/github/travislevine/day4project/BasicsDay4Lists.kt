@@ -25,4 +25,19 @@ fun main() {
     // Add items back with index
     shoppingList.add(2, "RAM")
     println(shoppingList)
+
+    // Remove items with raw index
+    shoppingList[3] = " Graphics Card 9800XT"
+    println(shoppingList)
+
+    // Replace items with the set method
+    shoppingList.set(1, "Air Cooling")
+    println(shoppingList)
+
+    // Check if Processor is in the list
+    if (shoppingList.contains("Processor")) {
+        println("The list contains a Processor")
+    } else {
+        println("The list does not contain a processor")
+    }
 }
