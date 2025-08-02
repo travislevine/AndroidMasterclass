@@ -23,3 +23,5 @@ rootProject.name = "DevMasterClass"
 include(":app")
 include(":day3project")
 include(":day4project")
+include(":day5tunitconverter")
+include(":day23dobcalc")
