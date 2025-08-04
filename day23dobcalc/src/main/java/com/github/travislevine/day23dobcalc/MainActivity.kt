@@ -17,6 +17,8 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
 
     private var tvSelectedDate : TextView? = null
+    private var tvAgeInMinutes : TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,23 +29,24 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+
         val btnDatePicker: Button = findViewById(R.id.btnDatePicker)
         tvSelectedDate = findViewById(R.id.tvSelectedDate)
+        tvAgeInMinutes = findViewById(R.id.tvAgeInMinutes)
 
         btnDatePicker.setOnClickListener {
             clickDatePicker()
         }
     }
 
-    fun clickDatePicker() {
+    private fun clickDatePicker() {
         // Gives us access to day of the year, month, year etc
         val myCalendar = Calendar.getInstance()
         val year = myCalendar.get(Calendar.YEAR)
         val month = myCalendar.get(Calendar.MONTH)
         val day = myCalendar.get(Calendar.DAY_OF_MONTH)
-
-        DatePickerDialog(this,
-            DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth, selectedDayOfMonth ->
+        val dpd = DatePickerDialog(this,
+            DatePickerDialog.OnDateSetListener { _, selectedYear, selectedMonth, selectedDayOfMonth ->
                 Toast.makeText(
                     this,
                     "Year was $selectedYear, month was ${selectedMonth + 1}, " +
@@ -57,12 +60,27 @@ class MainActivity : AppCompatActivity() {
                 val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
 
                 val theDate = sdf.parse(selectedDate)
+                theDate?.let {
+                    // Time Between the selected date
+                    val selectedDateInMinutes = theDate.time / 60000
+
+                    // Gets the time that has passed since January 1970 in milliseconds
+                    val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+                    currentDate?.let {
+                        val currentDateInMinutes = currentDate.time / 60000
+
+                        val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
+
+                        tvAgeInMinutes?.text = differenceInMinutes.toString()
+                    }
+ }
             },
             year,
             month,
             day
-            ).show()
-
+            )
+            dpd.datePicker.maxDate = System.currentTimeMillis() - 86400000
+            dpd.show()
 
     }
 }
