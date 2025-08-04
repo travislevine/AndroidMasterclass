@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">day23DOBCalc</string>
+    <string name="app_name">Age In Minutes</string>
+
+    <string name="btnText">SELECT DATE</string>
 </resources>

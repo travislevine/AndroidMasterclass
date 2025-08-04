@@ -1,9 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.DevMasterClass" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.DevMasterClass" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/btnBgColor</item>
+        <item name="colorPrimaryVariant">@color/textBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/bgColor</item>
+        <item name="colorOnSecondary">@color/textBlue</item>
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/lightGrey</item>
+        <!-- Action bar styling -->
+        <item name="actionBarTheme">@style/AppActionBarTheme</item>
+        <item name="android:textColorPrimary">@color/textBlue</item>
     </style>
 
-    <style name="Theme.DevMasterClass" parent="Base.Theme.DevMasterClass" />
+    <!-- Action Bar Theme -->
+    <style name="AppActionBarTheme" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:background">@color/btnBgColor</item>
+    </style>
+
+    <!-- Main app theme -->
+    <style name="Theme.DevMasterClass" parent="Base.Theme.DevMasterClass">
+        <!-- Customize your light theme here. -->
+    </style>
+
+    <!-- Dark theme variant -->
+    <style name="Theme.DevMasterClass.Dark" parent="Base.Theme.DevMasterClass">
+        <!-- Customize your dark theme here. -->
+        <item name="android:colorBackground">@color/textBlue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorSurface">@color/bgColor</item>
+    </style>
 </resources>
